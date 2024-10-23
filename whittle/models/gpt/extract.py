@@ -6,7 +6,7 @@ from whittle.models.gpt import GPT
 from whittle.models.gpt.blocks.mlp import GptNeoxMLP, LLaMAMLP
 
 
-def extract_sub_network(model, sub_network_config):
+def extract_sub_network(model: GPT, sub_network_config):
     sub_network = GPT(sub_network_config)
 
     state_dict = extract_linear(model.lm_head)

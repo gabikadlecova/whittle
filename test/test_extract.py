@@ -59,7 +59,9 @@ def test_extract_sub_network_llamamlp() -> None:
     )
 
     # dynamically computed when set_sub_network is called
-    sub_network_config.head_size = sub_network_config.n_embd // sub_network_config.n_head
+    sub_network_config.head_size = (
+        sub_network_config.n_embd // sub_network_config.n_head
+    )
 
     # instantiate a new model
     sub_network = extract_sub_network(super_network, sub_network_config)
